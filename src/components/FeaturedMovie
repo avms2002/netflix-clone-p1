@@ -1,0 +1,20 @@
+import React from "react";
+import './FeatureMovie.css';
+
+export default ({ item }) => {
+    return (
+        <section
+            className='featured'
+            style={{
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundImage: `url(https://image.tmdb.org/t/p/original${item.backdrop_path})`,
+                background: 'linear-gradient(to top, #111 30% trasnparent)',
+           
+            }}
+        >
+            <div>{item.original_name}</div>
+         
+        </section>
+    );
+}
