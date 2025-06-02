@@ -7,15 +7,15 @@ import FeaturedMovie from './components/FeaturedMovie';
 //ao carregar a aplicação, será executada esta função
 export default () => {
   const [movieList,setMovieList] = useState([]);
-  const[FeaturedData,setFeatureData]= useState(null);
+  const[FeaturedDate,setFeature]= useState([]);
   
   useEffect(() => {
     const loadAll = async () => {
       //pegando a lista total
       let list = await Tmdb.getHomeList();
-      setMovieList(list); 
+      setMovieList(List); 
 
-      let originals = list.filter((i) => i.slug === 'originals');
+      let originals = List.filter((i) => i.slug === 'originals');
       let randowChosen = Math.floor(
          Math.random() * originals[0].items.results.length
 
@@ -31,7 +31,7 @@ export default () => {
 
   return (
     <div className='page'>
-      {FeaturedData && <FeaturedMovie item={FeaturedData}/>}
+      {FeaturedDate && <FeaturedMovie item={FeaturedDate}/>}
 
 
 
